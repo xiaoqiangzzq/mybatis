@@ -1,5 +1,6 @@
 package com.yj.mybatis.session;
 
+import com.yj.mybatis.executor.MyExecutor;
 import com.yj.mybatis.mapping.MyConfiguration;
 
 /**
@@ -17,5 +18,11 @@ public class MySqlSessionFactory {
         this.myConfiguration = myConfiguration;
     }
 
+
+    public MySqlSession openSession(){
+
+        MyExecutor myExecutor = new MyExecutor(myConfiguration);
+        return new MySqlSession(myConfiguration,myExecutor);
+    }
 
 }

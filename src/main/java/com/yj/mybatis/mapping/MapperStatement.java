@@ -17,8 +17,15 @@ public class MapperStatement {
 
     private String resultType;
 
-
     private String sql;
+
+    public MapperStatement(String nameSpace, String id, String parameterType, String resultType, String sql) {
+        this.nameSpace = nameSpace;
+        this.id = id;
+        this.parameterType = parameterType;
+        this.resultType = resultType;
+        this.sql = sql;
+    }
 
     public String getSql() {
         return sql;

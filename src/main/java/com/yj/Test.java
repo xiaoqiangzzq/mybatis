@@ -1,5 +1,8 @@
 package com.yj;
 
+import com.yj.mybatis.session.MySqlSessionFactory;
+import com.yj.mybatis.session.MySqlSessionFactoryBuilder;
+
 import java.io.InputStream;
 
 /**
@@ -15,6 +18,7 @@ public class Test {
         //1.读取mybatis-config文件
         InputStream inputStream = Test.class.getClassLoader().getResourceAsStream("mybatis-config.xml");
 //        2.构建sqlsessionFactory
+        MySqlSessionFactory build = new MySqlSessionFactoryBuilder().build(inputStream);
 //        3.打开sqlsession
 //        4.获取mapper接口对象
 //        5.调用mapper接口对象的方法操作数据库
